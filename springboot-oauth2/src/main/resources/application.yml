@@ -1,0 +1,31 @@
+# 服务端口
+server:
+  port: 8080
+spring:
+  application:
+    name: springboot-oauth2
+  # 数据源配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/aikq_go?characterEncoding=utf8
+    username: root
+    password: 123456
+  jpa:
+    database: mysql
+    hibernate:
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    show-sql: true
+
+# oauth 配置
+authentication:
+  oauth:
+    clientid: kaywall
+    secret: kaywall
+    access-token-validity-seconds: 86400
+    refresh-token-validity-seconds: 7200
+
+security:
+  oauth2:
+    resource:
+      filter-order: 3
